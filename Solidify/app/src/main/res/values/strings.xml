@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Solidify</string>
+    <string name="solidify_could_not_create_vbo">Could not create VBO.</string>
+    <string name="solidify_error_unknown">An unknown error occurred.</string>
 </resources>
