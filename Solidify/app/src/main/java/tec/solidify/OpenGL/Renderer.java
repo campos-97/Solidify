@@ -3,11 +3,6 @@ package tec.solidify.OpenGL;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
-import android.util.Log;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -216,22 +211,9 @@ public class Renderer implements GLSurfaceView.Renderer {
     public void onDrawFrame(GL10 glUnused) {
 
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
-        GLES20.glEnable(GLES20.GL_SCISSOR_TEST);
 
-        GLES20.glViewport(0, 0, width1/2, height1/2);
-        GLES20.glScissor(0, 0, width1/2, height1/2);
-        GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
-        renderScene();
-
-        GLES20.glViewport(0, height1/2, width1/2, height1/2);
-        GLES20.glScissor(0, height1/2, width1/2, height1/2);
-        GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
-        renderScene();
-
-        GLES20.glViewport(width1/2, height1/4, width1/2, height1/2);
-        GLES20.glScissor(width1/2, height1/4, width1/2, height1/2);
-        GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
-        renderScene();
+        GLES20.glViewport(0, 0, width1, height1);
+        //renderScene();
     }
 
     private void renderScene(){
