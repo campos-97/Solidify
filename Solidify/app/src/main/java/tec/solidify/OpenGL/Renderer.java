@@ -9,6 +9,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 import tec.solidify.MainActivity;
 import tec.solidify.Math.Solid;
+import tec.solidify.Math.SolidCretor;
 import tec.solidify.R;
 
 /**
@@ -133,6 +134,8 @@ public class Renderer implements GLSurfaceView.Renderer {
     public Renderer(final MainActivity lessonEightActivity, ErrorHandler errorHandler) {
         this.mainActivity = lessonEightActivity;
         this.errorHandler = errorHandler;
+
+        SolidCretor.getInstance().createSolidFromEq();
     }
 
     @Override
